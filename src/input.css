@@ -1,0 +1,49 @@
+@import url('https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..900;1,300..900&family=Inconsolata:wght@200..900&family=League+Spartan:wght@100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Oswald:wght@200..700&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Raleway:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --breakpoint-sm: 480px;
+  --breakpoint-md: 768px;
+  --breakpoint-lg: 976px;
+  --breakpoint-xl: 1440px;
+
+  /* --background-hero: url('../assets/images/background-mobile.png');
+  --background-pattern: url();
+  --background-swirl: url();
+  --background-pattern-bottom: url();
+  --background-pattern: url(); */
+
+  --color-brightOrange: hsl(7, 88%, 67%);
+  --color-brightOrangeDim: hsl(7, 71%, 60%);
+  --color-darkBlue: hsl(248, 70%, 10%);
+  --color-grayishBlue: hsl(245, 19%, 35%);
+  --color-verylightBlue: hsl(245, 15%, 58%);
+  --color-veryPalegray: hsl(252, 6%, 83%);
+  --color-veryLIGHTgray: hsl(0, 0%, 100%);
+  --color-paleBlue: #19173f;
+  --color-lighterBlue: #342d59;
+  --color-gradientOrange: hsl(7, 86%, 67%);
+
+  --font-sans: "Inconsolata", monospace;
+}
+
+.btn{
+  background-color: hsl(245, 19%, 35%);
+  color:hsl(252, 6%, 83%);
+  padding: 6px 8px;
+  border-radius: 10px;
+  display: inline;
+}
+
+.errorDesign{
+  outline: 2px solid red;
+}
+
+/* .colors{
+  color: #342d59;
+  color: #19173f;
+  color: hsl(245, 15%, 58%);
+  color: hsl(252, 6%, 83%);
+  color:  hsl(245, 19%, 35%);
+  color: hsl(248, 70%, 10%);
+} */

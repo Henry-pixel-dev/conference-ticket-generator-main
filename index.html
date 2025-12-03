@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+  
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+
+  <link href="src/output.css" rel="stylesheet">
+  <title>Frontend Mentor | Conference ticket generator</title>
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <style>
+    .attribution { font-size: 11px; text-align: center; }
+    .attribution a { color: hsl(228, 45%, 44%); }
+  </style>
+</head>
+<body class="bg-[url('../assets/images/background-mobile.png')] bg-hero bg-cover bg-center md:bg-[url('../assets/images/background-tablet.png')] lg:bg-[url('../assets/images/background-desktop.png')]">
+
+  <div class="relative min-h-screen overflow-hidden flex flex-col">
+    <img src="assets/images/pattern-lines.svg" alt="" class="absolute top-0 right-0  pointer-events-none w-auto z-40">
+    <img src="assets/images/pattern-circle.svg" alt="" class="absolute -top-8 -left-8 pointer-events-none  w-32 z-1 md:-top-15 md:left-5">
+    <img src="assets/images/pattern-squiggly-line-top.svg" alt="" class="absolute top-5 right-0 w-32  md:w-64 lg:w-128">
+    <img src="assets/images/pattern-squiggly-line-bottom-mobile-tablet.svg" alt="" class="absolute w-64 bottom-0 -left-1 md:w-128 ">
+
+    <header class="relative z-50 container mx-auto flex flex-row justify-center py-6">
+      <div>
+        <img src="assets/images/logo-full.svg" alt="logo">
+      </div>
+    </header>
+
+
+  
+  
+  
+
+    <main id="main" class="relative z-50">
+      <div class=" container mx-auto flex flex-col space-y-6 my-6">
+        <div class="space-y-3">
+          <h1 class="max-w-lg mx-auto text-center text-white text-bold text-2xl md:text-4xl">
+            Your Journey to Coding Conf 2025 Starts Here!
+
+          </h1>
+
+          <p class="max-w-md text-veryPalegray text-center mx-auto text-base ">
+          Secure your spot at next year's biggest coding conference.
+          </p>
+        </div> 
+ 
+        <form action="/upload" method="post" enctype="multipart/form-data" class="flex flex-col  max-w-9/10 mx-auto bg-red space-y-6">
+          <div class="flex flex-col space-y-6">
+            <label  class="text-veryPalegray items-start">
+              Upload Avatar
+            </label>
+            <div class="flex flex-col space-y-6 justify-center items-center bg-paleBlue rounded-2xl outline-1px outline-dashed outline-[#8583aa] p-6 hover:cursor-pointer  focus:outline-2 focus:outline-offset-3 focus:outline-veryPalegray hover:bg-grayishBlue imgInputContainer"> 
+          
+              <input type="file" id="imageUpload" name="image" accept="image/*" class=" hidden mt-2 ">
+
+              <label for="imageUpload">
+                <img src="assets/images/icon-upload.svg" alt="logo" id="triggerImg" class="p-3 bg-lighterBlue rounded-2xl">
+              </label>
+              <img src="#" alt="Image Preview" id="Preview" class="hidden max-w-32 max-h-32 rounded-lg">
+              <p class="text-center text-base text-veryPalegray info">
+              Drag and drop or click to uploads
+              </p>
+              <div id="btncontainer" class="flex flex-row items-center justify-between space-x-3"></div>
+            </div>
+            <div class="flex flex-row space-x-3">
+              <img src="assets/images/icon-info.svg" alt="icon">
+              <p class="text-sm text-veryPalegray imgError">
+                Upload your photo (JPG or PNG, max size: 500KB).
+              </p>
+            </div>
+          </div>
+
+          <div class=" flex flex-col space-y-3">
+            <label for="name" class="text-veryPalegray">
+              Full Name
+            </label>
+            <input type="text" name="text" id="name" class="text-veryPalegray bg-paleBlue p-4 w-full rounded-2xl outline-verylightBlue outline-solid  hover:bg-grayishBlue  hover:cursor-pointer focus:outline-2 focus:outline-offset-3 focus:outline-veryPalegray ">
+
+            <div class="hidden flex-row space-x-3 errorShow">
+              <svg 
+                xmlns="http://www.w3.org/2000/svg" 
+                fill="none" 
+                viewBox="0 0 24 24" 
+                stroke-width="1.5" 
+                stroke="currentColor" 
+                class="w-[16px] h-[16px] text-red-500">
+  
+                <path 
+                  stroke-linecap="round" 
+                  stroke-linejoin="round" 
+                  d="M11.25 11.25l.041-.02a.75.75 0 011.063.852l-.708 2.836a.75.75 0 001.063.853l.041-.021M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-9-3.75h.008v.008H12V8.25z"/>
+              </svg>
+              <p class="text-sm text-red-500">
+                Please enter your Name
+              </p>
+            </div>
+          </div>
+          
+
+          <div class="flex flex-col space-y-3">
+            <label for="email" class="text-veryPalegray">
+              Email Address
+            </label>
+            <input type="email" name="email" id="email" class="bg-paleBlue p-4 w-full rounded-2xl outline-verylightBlue outline-solid text-veryPalegray  hover:bg-grayishBlue hover:cursor-pointer focus:outline-2 focus:outline-offset-3 focus:outline-veryPalegray" placeholder="example@email.com">
+
+            <div class="hidden flex-row space-x-3 errorShow">
+              <svg 
+                xmlns="http://www.w3.org/2000/svg" 
+                fill="none" 
+                viewBox="0 0 24 24" 
+                stroke-width="1.5" 
+                stroke="currentColor" 
+                class="w-[16px] h-[16px] text-red-500">
+  
+                <path 
+                  stroke-linecap="round" 
+                  stroke-linejoin="round" 
+                  d="M11.25 11.25l.041-.02a.75.75 0 011.063.852l-.708 2.836a.75.75 0 001.063.853l.041-.021M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-9-3.75h.008v.008H12V8.25z"/>
+              </svg>
+              <p class="text-sm text-red-500">
+                Please enter your a valid email address.
+              </p>
+            </div>
+          </div>
+
+          <div class="flex flex-col space-y-3">
+            <label for="gitname" class="text-veryPalegray">
+              GitHub Username
+            </label>
+            <input type="text" name="username" id="gitname" class="bg-paleBlue p-4 w-full rounded-2xl outline-verylightBlue outline-solid text-veryPalegray   hover:bg-grayishBlue hover:cursor-pointer focus:outline-2 focus:outline-offset-3 focus:outline-veryPalegray" placeholder="GitHub Username"   >
+
+            <div i class="hidden flex-row space-x-3 errorShow">
+              <svg 
+                xmlns="http://www.w3.org/2000/svg" 
+                fill="none" 
+                viewBox="0 0 24 24" 
+                stroke-width="1.5" 
+                stroke="currentColor" 
+                class="w-[16px] h-[16px] text-red-500">
+  
+                <path 
+                  stroke-linecap="round" 
+                  stroke-linejoin="round" 
+                  d="M11.25 11.25l.041-.02a.75.75 0 011.063.852l-.708 2.836a.75.75 0 001.063.853l.041-.021M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-9-3.75h.008v.008H12V8.25z"/>
+              </svg>
+              <p class="text-sm text-red-500">
+                Please enter your a valid GitHub Username
+              </p>
+            </div>
+          </div>
+
+          <button id="btn" type="submit" class="p-4 w-full rounded-2xl bg-brightOrangeDim text-bold hover:bg-brightOrange hover:cursor-pointer focus:outline-2 focus:outline-offset-3 focus:outline-veryPalegray">
+            Generate My Ticket  
+          </button> 
+        </form>
+      </div>
+
+      <section id="card" class="hidden">
+        <div class="container mx-auto flex flex-col space-y-6 items-center justify-between">
+          <h1  class="max-w-lg text-3xl text-bold text-center text-veryLIGHTgray md:text-4xl lg:text-5xl">
+            Congrats, <span class="fullName bg-gradient-to-r from-gradientOrange to-veryLIGHTgray bg-clip-text  text-transparent" ></span>! Your ticket is ready.
+          </h1>
+
+          <p  class="max-w-sm text-base text-center text-veryLIGHTgray md:text-lg">
+            We've emailed your ticket to <span  class="text-brightOrangeDim email"></span> and will send updates in the run up to the event.
+          </p>
+
+          <div id="ticket" class="relative ">
+            <img src="assets/images/pattern-ticket.svg" alt="ticket" class="  max-w-sm">
+            <img src="assets/images/logo-full.svg" alt="" class="absolute top-5 left-3 max-w-64 z-50">
+            <p class="absolute top-13 left-15 text-veryPalegray">
+            Jan 31, 2025 / Austin, TX 
+            </p>
+            <p class="text-veryLIGHTgray absolute top-20 right-15 z-50">#01609</p>
+            <img src="#" alt="Previewed image" id="ticketImg" class="hidden max-h-16 max-w-16  absolute top-26 left-3 rounded-lg">
+
+            <div id="inputContainer" class="flex flex-col  top-26 left-23 absolute z-50">
+              <h3 class="fullName text-bold text-veryPalegray" ></h3>
+              <p class=" email text-bold text-veryPalegray"></p>
+            </div>
+          </div>
+          
+        </div>
+      </section>
+    </main>
+
+    <div class="attribution relative z-50 mt-10">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge">Frontend Mentor</a>. 
+    Coded by <a href="#">Okoro Henry Ifeanyi</a>.
+  </div>
+  </div>
+  <script src="main.js"></script>
+</body>
+</html>
