@@ -50,11 +50,15 @@ let formData = {
     const reader = new FileReader();
 
     reader.onload = (e) => {
-       previewImg.src = e.target.result;
-       previewImg.style.display = 'block'; 
+
+        const base64 = e.target.result;
+        formData.imageFile = base64;
+
+        previewImg.src = base64
+        previewImg.style.display = 'block'
     }
     
-    reader.readAsDataURL(input.files[0])
+    reader.readAsDataURL(file)
 
     triggerImg.style.display = "none";
     paraInfo.style.display = "none";
@@ -266,10 +270,9 @@ function generateTicket(){
     email.append(newEmail)
 
 
-    const file = formData.imageFile
-    const imgURL = URL.createObjectURL(file);
-    ticketImg.src = imgURL
-    ticketImg.style.display = 'block'; 
+    const base64 = formData.imageFile;
+    ticketImg.src = base64;
+    ticketImg.style.display = 'block';
 }
 
 form.addEventListener("submit", function(e){
