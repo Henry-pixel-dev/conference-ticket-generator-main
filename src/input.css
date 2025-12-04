@@ -7,12 +7,6 @@
   --breakpoint-lg: 976px;
   --breakpoint-xl: 1440px;
 
-  /* --background-hero: url('../assets/images/background-mobile.png');
-  --background-pattern: url();
-  --background-swirl: url();
-  --background-pattern-bottom: url();
-  --background-pattern: url(); */
-
   --color-brightOrange: hsl(7, 88%, 67%);
   --color-brightOrangeDim: hsl(7, 71%, 60%);
   --color-darkBlue: hsl(248, 70%, 10%);
@@ -39,11 +33,3 @@
   outline: 2px solid red;
 }
 
-/* .colors{
-  color: #342d59;
-  color: #19173f;
-  color: hsl(245, 15%, 58%);
-  color: hsl(252, 6%, 83%);
-  color:  hsl(245, 19%, 35%);
-  color: hsl(248, 70%, 10%);
-} */
